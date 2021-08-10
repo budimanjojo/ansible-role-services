@@ -1,0 +1,9 @@
+---
+- name: Configure Debian specific services
+  service:
+    name: "{{ item.name }}"
+    arguments: "{{ item.arguments | default(omit) }}"
+    enabled: "{{ item.enabled | default(omit) | bool }}"
+    state: "{{ item.state | default(omit) }}"
+  loop: "{{ services_list.debian }}"
+  when: item is defined

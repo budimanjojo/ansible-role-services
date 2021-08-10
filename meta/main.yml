@@ -1,0 +1,31 @@
+---
+galaxy_info:
+  role_name: services
+  author: Budiman JOJO
+  description: Role to manage linux services
+  issue_tracker_url: http://github.com/budimanjojo/ansible-role-services/issues
+  license: license (MIT)
+  min_ansible_version: 2.1
+  platforms:
+  - name: Archlinux
+    versions:
+    - all
+  - name: Ubuntu
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - all
+  - name: Fedora
+    versions:
+    - all
+
+  galaxy_tags:
+  - system
+  - packaging
+  - linux
+  - server
+  - development
+  - systemd
+
+dependencies: []

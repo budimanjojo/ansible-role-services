@@ -1,0 +1,12 @@
+---
+- name: Configure services
+  service:
+    name: "{{ item.name }}"
+    arguments: "{{ item.arguments | default(omit) }}"
+    enabled: "{{ item.enabled | default(omit) | bool }}"
+    state: "{{ item.state | default(omit) }}"
+  loop: "{{ services_list.all }}"
+  when: item is defined
+
+- name: Configure os specific services
+  include_tasks: "{{ ansible_os_family }}.yml"

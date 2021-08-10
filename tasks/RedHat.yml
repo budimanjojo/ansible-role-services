@@ -1,0 +1,9 @@
+---
+- name: Configure RedHat specific services
+  service:
+    name: "{{ item.name }}"
+    arguments: "{{ item.arguments | default(omit) }}"
+    enabled: "{{ item.enabled | default(omit) | bool }}"
+    state: "{{ item.state | default(omit) }}"
+  loop: "{{ services_list.redhat }}"
+  when: item is defined
