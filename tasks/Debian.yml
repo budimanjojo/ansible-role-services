@@ -1,6 +1,6 @@
 ---
 - name: Configure Debian specific services
-  service:
+  ansible.builtin.service:
     name: "{{ item.name }}"
     arguments: "{{ item.arguments | default(omit) }}"
     enabled: "{{ item.enabled | default(omit) | bool }}"
